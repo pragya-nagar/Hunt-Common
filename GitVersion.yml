@@ -1,0 +1,25 @@
+assembly-versioning-scheme: MajorMinorPatch
+mode: Mainline
+branches: 
+    sprint:
+      regex: sprint/\d+
+      increment: Patch
+      source-branches: ['master']
+      tag: ''
+      is-mainline: true
+    release:
+      regex: release/\d+\.\d+
+      increment: Patch
+      source-branches: ['master']
+      tag: ''
+      is-mainline: true
+    feature:
+      regex: (feat/)|(fix/)|(chore/)
+      tag: 'pre'
+    master:
+      regex: master
+      is-mainline: true
+      increment: Patch
+      tag: ''
+ignore:
+  sha: []
